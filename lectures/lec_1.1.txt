@@ -1,0 +1,6 @@
+JavaScript --> client side language, open source, JIT compiled,
+brings interactivity in website -- validation
+
+clent-server architecture
+request from client ---> entertains request coming from client
+

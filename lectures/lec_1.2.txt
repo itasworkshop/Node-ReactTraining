@@ -1,0 +1,134 @@
+//static typed language vs dynamic typed language
+
+a = 10;
+
+//a = "Rajesh";
+
+//a = true;
+
+console.log(a);
+
+console.log(typeof a);
+
+//array --> collection of items
+
+myarr = [1,2,3,4,5, "Rajesh",true,[1,2,3]];
+
+console.log(myarr);
+
+//function is js
+//first class function
+
+//var,let,const
+
+const add = function addition(a,b){
+  console.log(a+b);
+}
+
+//addition(10,20);
+
+add(10,20);
+
+//function is js
+//first class function
+
+//var,let,const
+
+add1 = function addition(a,b){
+  //console.log(a+b);
+  return a+b;
+}
+
+console.log(add1);
+console.log(add1(10,20));
+
+add2 = (x,y) => console.log(x+y);
+
+console.log(add2(10,20));
+
+var result = add1(50,20);
+console.log(result);
+
+//function is js
+
+function printMe(a,b){
+  //a= 0;
+  //b= 0;
+  return {a:50,b};
+}
+
+//destructing
+var {a,b} = printMe(10,20);
+
+
+console.log(a);
+console.log(b);
+
+//function is js
+
+function printMe(arr){
+  //logic  
+  return [a,b];
+}
+
+const [x2,y2] = printMe([25,35]);
+
+console.log(x2);
+console.log(y2);
+
+var data = [1,2,33,45,66,76,78,99];
+
+function evenOddFilter(myarr){
+  var even = []
+  var odd = []
+  
+ 	even = myarr.filter(number => number%2==0);
+  odd = myarr.filter(number => number%2!==0);
+  
+  return [even,odd];
+}
+
+const [res1,res2] = evenOddFilter(data);
+
+console.log(res1);
+console.log(res2);
+
+var data = [1,2,33,45,66,76,78,99];
+
+function evenOddFilter(myarr){
+  var even = []
+  var odd = []
+  
+ 	even = myarr.filter(number => number%2==0);
+  odd = myarr.filter(number => number%2!==0);
+  
+  return [even,odd];
+}
+
+const [res1,res2] = evenOddFilter(data);
+
+console.log(res1);
+console.log(res2);
+
+//filter out even and odd from array
+var data = [1,2,33,45,66,76,78,99];
+
+function evenOddFilter(myarr){ 
+ 	even = myarr.filter(number => number%2==0);
+  odd = myarr.filter(number => number%2!==0);
+  
+  return [even,odd];
+}
+
+const [res3,res4] = evenOddFilter(data);
+
+console.log(res3);
+console.log(res4);
+
+
+// javascript object
+
+obj = {}
+obj = {id:101,name:"Rajesh"}
+
+console.log(obj);
