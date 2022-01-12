@@ -4,31 +4,31 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-//nested component
-function MyHello(){
-  return (
-    <h1>Hello from MyHello.</h1>
-  );
-}
+//class based component
 
-function YourHello(){
-  return (
-    <h1>Hello from YourHello.</h1>
-  );
-}
+//class --> template for creating objects
+//object --> real world entity --> 1) attribute/properties
+//2) behaviour/functionality
 
-function SayHello(props){
-  let show = props.isTrue;
+//props vs state
+//function based components are stateless --> they do not have state
+//class based components are stateful --> they have state
+class MyApp extends React.Component{
 
-  if(show){
-    return <MyHello />
-  }else{
-    return <YourHello />
+  constructor(props){
+    super(props); //first call should be super --> parent constructor
+    this.state = {a:50}; //state of the component
   }
+
+  render(){
+    return(
+      <h1>Hello this is my state {this.state.a} and props is {this.props.b}</h1>
+    );
+  };
 
 }
 
 ReactDOM.render(  
-    <SayHello isTrue={true}/>,
+    <MyApp b={35}/>,
   document.getElementById('root')
 );
