@@ -1,0 +1,7 @@
+React
+
+Tree of components/ components based architecture
+reusable components
+component --> basic building block for our react application
+
+JSX --> mixture of js with html
