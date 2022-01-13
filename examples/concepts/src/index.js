@@ -4,31 +4,45 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-//class based component
+//working with forms
+//form maintain state
 
-//class --> template for creating objects
-//object --> real world entity --> 1) attribute/properties
-//2) behaviour/functionality
+//event handling
 
-//props vs state
-//function based components are stateless --> they do not have state
-//class based components are stateful --> they have state
-class MyApp extends React.Component{
-
+class MyForm extends React.Component{
   constructor(props){
-    super(props); //first call should be super --> parent constructor
-    this.state = {a:50}; //state of the component
+    super(props);
+    this.state = {value:''};
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event){
+    this.setState({value:event.target.value});
+    console.log("from on change"+this.state.value);
+  }
+
+  handleSubmit(){    
+    alert('Are you sure? '+ this.state.value);
+    //take to backend
   }
 
   render(){
     return(
-      <h1>Hello this is my state {this.state.a} and props is {this.props.b}</h1>
+      <form onSubmit={this.handleSubmit}>
+        <label>
+          Name:
+          <input type="text" value={this.state.value} onChange={this.handleChange}/>
+        </label>
+        <input type="submit" value="Submit"/>
+      </form>
     );
+
   };
 
 }
 
 ReactDOM.render(  
-    <MyApp b={35}/>,
+    <MyForm />,
   document.getElementById('root')
 );
